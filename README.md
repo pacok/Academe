@@ -42,7 +42,7 @@ Abrir el navegador y dirigete a la direccion http:/localhost/4200.
 
 ## Autor
 
-* **Francisco Camas** - *Initial work* - [PurpleBooth](https://github.com/PurpleBooth)
+* **Francisco Camas** - *Github* - [pacok](https://github.com/pacok)
 
 ## Licencia
 Este proyecto carece de licencias, sientete libre de descargarlo y utilizar el codigo a tu antojo. :)
