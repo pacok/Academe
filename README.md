@@ -1,3 +1,6 @@
+![Alt text](https://github.com/pacok/Academe/blob/master/Academe/src/assets/img/logo20.png) 
+
+
 # Academe
 Proyecto ciclo formativo DAM, plataforma de aprendizaje.
 
