@@ -1,0 +1,49 @@
+<div class="container">
+    <div class="row">
+        <div class="col-md-12">
+            <div class="well well-sm">
+                <form class="form-horizontal" [formGroup]="exampleForm" novalidate (ngSubmit)="onSubmit(exampleForm.value)">
+                    <fieldset>
+                        <legend class="text-center header">Envio de Mensajes</legend>
+
+                        <div class="form-group">
+                            <span class="col-md-1 col-md-offset-2 text-center"><i class="fa fa-user bigicon"></i></span>
+                            <div class="col-md-8">
+                                <input type="text" formControlName="de" class="form-control" value={{usuarioAcutal}}>
+                            </div>
+                        </div>
+
+                        <div class="form-group"> <!-- State Button -->
+                            <span class="col-md-1 col-md-offset-2 text-center"><i class="fa fa-user bigicon"></i></span>
+                            <div class="col-md-8">
+                                <select class="form-control" formControlName="para" required>
+                                    <option  *ngFor="let subscriptores of subscriptoresArrayFinal" value={{subscriptores}}>{{subscriptores}}</option>                                    
+                                  </select>                    
+                            </div>                                              
+                          </div>                   
+                        
+                        <div class="form-group">
+                            <span class="col-md-1 col-md-offset-2 text-center"><i class="fa fa-envelope-o bigicon"></i></span>
+                            <div class="col-md-8">
+                                <input formControlName="asunto" type="text" placeholder="Asunto del Mensaje" class="form-control">                                
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <span class="col-md-1 col-md-offset-2 text-center"><i class="fa fa-pencil-square-o bigicon"></i></span>
+                            <div class="col-md-8">
+                                <textarea class="form-control" formControlName="mensaje" placeholder="Escriba aqui el contenido de su mensaje." rows="7" required></textarea>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <div class="col-md-12 text-center">
+                                <button type="submit" class="btn btn-primary btn-lg">Enviar</button>
+                            </div>
+                        </div>
+                    </fieldset>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

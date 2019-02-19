@@ -1,0 +1,56 @@
+<div class="edit-page">
+    <nav aria-label="breadcrumb">
+      <ol class="breadcrumb">
+        <li class="breadcrumb-item active" aria-current="page">Editar Curso</li>
+      </ol>
+    </nav>
+    <div class="page-content">
+      <div class="row">
+        <div class="col col-md-4">
+          <img class="img-imagen" [src]="item.imagen">          
+          <input type="file" (change)="upload($event)" accept="image/*">
+        </div>
+        <div class="col col-md-8">
+  
+          <form class="edit-form" [formGroup]="exampleForm" novalidate (ngSubmit)="onSubmit(exampleForm.value)">
+  
+            <div class="form-group">
+                <label>Nombre del curso</label>
+                <input  type="text" placeholder="Nombre" class="form-control" formControlName="nombre">
+             
+              <ng-container *ngFor="let validation of validation_messages.nombre">
+                <mat-error *ngIf="exampleForm.get('nombre').hasError(validation.type) && (exampleForm.get('nombre').dirty || exampleForm.get('nombre').touched)">{{validation.message}}</mat-error>
+              </ng-container>
+            </div>
+  
+            <div class="form-group">
+                <label>Autor del curso</label>
+                <input  placeholder="Autor" class="form-control" formControlName="autor">
+             
+              <ng-container *ngFor="let validation of validation_messages.autor">
+                <mat-error *ngIf="exampleForm.get('autor').hasError(validation.type) && (exampleForm.get('autor').dirty || exampleForm.get('autor').touched)">{{validation.message}}</mat-error>
+              </ng-container>
+            </div>
+  
+            <div class="form-group">
+                <label>Descripcion de contenidos</label>
+                  <input  placeholder="Descripcion" class="form-control" formControlName="descripcion">
+             
+                <ng-container *ngFor="let validation of validation_messages.descripcion">
+                  <mat-error *ngIf="exampleForm.get('descripcion').hasError(validation.type) && (exampleForm.get('descripcion').dirty || exampleForm.get('descripcion').touched)">{{validation.message}}</mat-error>
+                </ng-container>
+              </div>
+  
+            <div class="row submit-button-container">
+              <div class="col-md-4">
+                <button  class="btn btn-primary"  type="submit" [disabled]="!exampleForm.valid">Guardar Cambios</button>
+              </div>
+              <div class="col-md-4">
+                <button class="btn btn-primary" style="background-color: red" type="button" (click)="delete()">Eliminar</button>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>

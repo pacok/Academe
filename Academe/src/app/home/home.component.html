@@ -1,0 +1,135 @@
+<div *ngIf="info.token; else loggedOut">
+
+
+    <div class="card">
+        <div class="card-header">
+            <div class="container">
+                <div class="row">
+                    <div class="col col-md-8 text-col">
+                  <h2 class="text-primary">Usuario conectado</h2>
+                  </div>
+                  <div class="col col-md-4">
+                  <button class="btn btn-primary ml-auto" (click)="logout()">Logout</button>
+                </div>
+                </div>
+            </div>
+         </div>
+        <div class="card-body">
+          <h5 class="card-title"><strong>Nombre de Usuario: </strong> {{info.username}}</h5>
+          <h5 class="card-text"><strong>Roles: </strong> {{info.authorities}}</h5>
+          <p class="card-text"><strong>Token: </strong> {{info.token}}</p>          
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-header">
+          <div class="container">
+            <div class="row">
+                <div class="col col-md-8 text-col">
+            <h2 class="text-primary">Mis Subscripciones</h2>
+            </div>
+            <div class="col col-md-4 actions-col">
+            <button class="btn btn-primary ml-auto" style="margin-right:100px" (click)="accion()"> Mostrar Cursos</button>
+          </div>
+          </div>
+        </div>
+        </div>
+        <div class="card-body" *ngIf="ocultar">
+          <div class="list-group subscripciones-list">
+              <h3 *ngIf="subscripciones">No tienes ninguna subscripcion, dirigete a la seccion de cursos para inscribirte en uno de ellos.</h3>
+            <div *ngFor="let item3 of items3" class="list-group-item list-group-item-action flex-column align-items-start">
+              <div class="row">                 
+                <div class="col col-md-8 text-col">                    
+                  <h2 > Curso: {{item3.payload.doc.data().curso}}</h2>
+                </div>
+                <div class="col col-md-4 actions-col">
+                  <button class="btn btn-primary" (click)="localizarCursoPorNombre(item3)"> Ir al curso</button>
+                  <button class="btn btn-primary" style="background-color: red" (click)="eliminarSubscripcion(item3)"> Eliminar subscripcion</button>                
+                </div>
+                </div>        
+              </div>
+            </div>
+          </div>
+        </div>  
+      
+
+      <div class="card">
+        <div class="card-header">
+          <div class="container">
+            <div class="row">
+                <div class="col col-md-8 text-col">
+            <h2 class="text-primary">Mensajes</h2>
+            </div>
+            <div class="col col-md-4 actions-col">
+            <button class="btn btn-primary mr-auto" style="margin-right:100px" (click)="accion2()"> Administrar Mensajes</button>
+          </div>
+          </div>
+        </div>
+        </div>
+        <div class="card-body" *ngIf="ocultar2">
+          <div class="list-group subscripciones-list">
+              <div class="list-group-item list-group-item-action flex-column align-items-start">
+                  <div class="row">                 
+                    <div class="col col-md-8 text-col">                    
+                      <h2 >Consulte su bandeja de entrada</h2>
+                    </div>
+                    <div class="col col-md-4 actions-col">
+                      <button class="btn btn-primary ml-auto" (click)="IrABandeja()"> Bandeja de entrada</button>                
+                    </div>
+                    </div>        
+                  </div>          
+            </div>
+            <div class="list-group subscripciones-list">
+                <div class="list-group-item list-group-item-action flex-column align-items-start">
+                    <div class="row">                 
+                      <div class="col col-md-8 text-col">                    
+                        <h2 >Envie mensajes a otros usuarios</h2>
+                      </div>
+                      <div class="col col-md-4 actions-col">
+                        <button class="btn btn-primary mr-auto" (click)="IrAMensajes()"> Enviar Mensaje</button>                
+                      </div>
+                      </div>        
+                    </div>          
+              </div>
+          </div>
+        </div>
+        
+      </div>     
+      
+
+<ng-template #loggedOut>
+
+    <div class="row">                 
+        <div class="col-md-12 text-center">                    
+          <h2 style="color:midnightblue"><strong>Pulse Entrar para comenzar</strong></h2>
+        </div>          
+        </div>
+
+    <div class="container">
+        <ngb-carousel *ngIf="images">
+            <ng-template ngbSlide >
+              <img [src]="images[0]" alt="Random first slide">
+              <div class="carousel-caption" style="color:black">
+                <h2><b>La hora del Aprendizaje</b></h2>
+                <h4>La mejor forma de preparate para el mañana.</h4>
+              </div>
+            </ng-template>
+            <ng-template ngbSlide>
+              <img [src]="images[1]" alt="Random second slide">
+              <div class="carousel-caption" style="color:black">
+                <h3><b>Los mejores Cursos</b> </h3>
+                <p>Pleno acceso a los mejores materiales.</p>
+              </div>
+            </ng-template>
+            <ng-template ngbSlide>
+              <img [src]="images[2]" alt="Random third slide">
+              <div class="carousel-caption" style="color:black">
+                <h3><b>Garantía de éxito</b></h3>
+                <p>Calendario por temas y ejercicios de autoevaluación.</p>
+              </div>
+            </ng-template>
+          </ngb-carousel>
+        </div>
+       
+        
+</ng-template>

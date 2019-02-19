@@ -1,0 +1,20 @@
+<div class="card-body" >
+  <div class="list-group subscripciones-list">
+    <h3 *ngIf="mensajes">No tienes ningun mensaje.</h3>
+    <div *ngFor="let item of items" class="list-group-item list-group-item-action flex-column align-items-start">
+      <div class="row">                 
+        <div class="col col-md-4 text-col">                    
+          <h2 > Mensaje de: <strong>{{item.payload.doc.data().de}}</strong></h2>
+          <h5 > Asunto: <strong>{{item.payload.doc.data().asunto}}</strong></h5>
+        </div>
+        <div class="col col-md-6 text-col">
+        <textarea type="text" id="form7" class="md-textarea form-control" rows="3">{{item.payload.doc.data().mensaje}}</textarea>
+      </div>
+        <div class="col col-md-2 actions-col">
+          <button class="btn btn-primary" style="background-color: red" (click)="eliminarMensaje(item)"> Eliminar Mensaje</button>                
+        </div>
+        </div>        
+      </div>
+    </div>
+  </div>
+ 

@@ -1,0 +1,85 @@
+<html>
+<head>    
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.min.css">
+    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">    
+</head>
+<body>
+<div class="container-fluid">
+<nav class="navbar navbar-expand-md navbar-dark navbar-custom">
+  <div class="container" style="size:20px">
+    <div>
+      <img src="../assets/img/logo20.png" width="40" height="40">
+    </div>
+    <div class="navbar-header mr-auto">
+      <h1 style="color:rgb(255, 255, 255)"><strong> Academe</strong></h1>
+    </div>
+    
+    <ul class="navbar-nav ml-auto">
+      <li class="nav-item" routerLinkActive="active">
+        <a class="nav-link" routerLink="home" href="#"><strong>Home</strong></a>
+      </li>
+      <li *ngIf="authority === 'user'" class="nav-item" routerLinkActive="active" >
+        <a class="nav-link active" routerLink="user"><strong>Cursos</strong></a>
+      </li>
+      <li *ngIf="authority === 'admin'" class="nav-item" routerLinkActive="active">
+        <a class="nav-link active" routerLink="admin"><strong>Administracion</strong></a>
+      </li>
+      <li *ngIf="!authority" class="nav-item" routerLinkActive="active">
+        <a class="nav-link active" routerLink="auth/login"><strong>Entrar</strong></a>
+      </li>
+      <li class="nav-item" routerLinkActive="active">
+        <a class="nav-link active" routerLink="conocenos" href="#"><strong>Conocenos</strong></a>
+      </li>
+      <!----<li *ngIf="authority === 'user'" class="nav-item">
+          Bienvenido: <br/> {{nombre}}
+        </li>-->
+    </ul>
+  </div>  
+</nav>
+<div class="container">
+  <router-outlet></router-outlet>
+</div>
+<div class="content">
+  </div>
+      <footer id="myFooter">
+          <div class="container">
+              <div class="row">
+                  <div class="col-sm-4 myCols">
+                      <h5>Comencemos</h5>
+                      <ul>
+                          <li routerLinkActive="active"><a routerLink="home">Home</a></li>
+                          <li routerLinkActive="active"><a routerLink="cursos">Cursos</a></li>
+                      </ul>
+                  </div>
+                  <div class="col-sm-4 myCols">
+                      <h5>Sobre Nuestra academias</h5>
+                      <ul>
+                          <li routerLinkActive="active"><a routerLink="conocenos">Contactanos</a></li>
+                          <li routerLinkActive="active"><a routerLink="conocenos">Quienes somos</a></li>
+                      </ul>
+                  </div>
+                  <div class="col-sm-4 myCols">
+                      <h5>Ayuda</h5>
+                      <ul>
+                          <li><a href="#">FAQ</a></li>
+                          <li><a href="#">Help desk</a></li>
+                          <li><a href="#">Forums</a></li>
+                      </ul>
+                  </div>                 
+              </div>
+          </div>
+          <div class="social-networks">
+              <a href="#" class="twitter"><i class="fa fa-twitter"></i></a>
+              <a href="#" class="facebook"><i class="fa fa-facebook-official"></i></a>
+              <a href="#" class="google"><i class="fa fa-google-plus"></i></a>
+          </div>
+          <div class="footer-copyright">
+              <p>© 2019 Academe </p>
+          </div>
+      </footer>
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+      <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    </div>
+  </body>  
+  </html>

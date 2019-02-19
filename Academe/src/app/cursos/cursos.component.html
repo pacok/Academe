@@ -1,0 +1,46 @@
+<div class="row">
+     <div class="container">
+      <div class="page-header">
+        <h1><strong> Cursos disponibles:</strong></h1>      
+        <h3>Listado de cursos que ofertamos en nuestra academia, podras encontrar de diversas tematicas, para agilizar el encontrar lo que buscas utiliza la herramienta de busqueda.</h3>
+      </div>      
+    </div>
+
+    <div class="col-md-4 offset-md-1">
+        <div class="input-group">
+            <input type="text" class="form-control" [(ngModel)]="searchValue" [ngModelOptions]="{standalone: true}" placeholder="Buscar por nombre..." (keyup)="searchByName()">
+            <div class="input-group-append">
+              <span class="input-group-text"><ion-icon class="icon" name="search">Buscar</ion-icon></span>
+            </div>
+          </div>
+    </div>
+    <div class="col col-md-2 offset-md-4 actions-col" *ngIf="authority == 'admin'" (click)="crearCurso()">
+      <button class="btn btn-primary"  type="button">
+        Crear Nuevo Curso
+      </button>
+    </div>    
+  </div>
+
+  <div class="list-group cursos-list">
+    <div *ngFor="let item of items" class="list-group-item list-group-item-action flex-column align-items-start">
+      <div class="row">
+        <div class="col col-md-2 image-col">
+          <img class="image" [src]="item.payload.doc.data().imagen">
+        </div>
+        <div class="col col-md-8 text-col">
+          <h2 class="mb-1">{{item.payload.doc.data().nombre}} </h2>
+          <h5 > Autor: {{item.payload.doc.data().autor}} </h5>
+        </div>
+        <div class="col col-md-2 actions-col" *ngIf="authority == 'admin'">
+          <button class="btn btn-primary" (click)="editarCurso(item)" type="button">
+            Modificar
+          </button>
+        </div>
+        <div class="col col-md-2 actions-col" *ngIf="authority == 'user'">
+          <button class="btn btn-primary" (click)="detallesCurso(item)" type="button">
+            Ver detalles
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
