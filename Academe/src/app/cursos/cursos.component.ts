@@ -50,7 +50,13 @@ export class CursosComponent implements OnInit {
   }
 
   editarCurso(item) {
+    console.log(item.payload.doc.id);
     this.router.navigate(['/editar/' + item.payload.doc.id]);
+  }
+
+  temasCurso(item) {
+    console.log(item.payload.doc.id);
+    this.router.navigate(['/temas/' + item.payload.doc.id]);
   }
 
   detallesCurso(item) {

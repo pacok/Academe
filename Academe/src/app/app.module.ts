@@ -37,12 +37,12 @@ import { EditarCursoComponent } from './editar-curso/editar-curso.component';
 import { CursosComponent } from './cursos/cursos.component';
 import { NuevoCursoComponent } from './nuevo-curso/nuevo-curso.component';
 import { DetallesCursoComponent } from './detalles-curso/detalles-curso.component';
-import { ChatComponent } from './chat/chat.component';
-import { ChatroomComponent } from './chatroom/chatroom.component';
 import { CursarComponent } from './cursar/cursar.component';
 import { ConocenosComponent } from './conocenos/conocenos.component';
 import { MensajesComponent } from './mensajes/mensajes.component';
-import { BandejaComponent } from './bandeja/bandeja.component' ;
+import { BandejaComponent } from './bandeja/bandeja.component';
+import { TemasCursosComponent } from './temas-cursos/temas-cursos.component';
+import { ReporteCursosComponent } from './reporte-cursos/reporte-cursos.component' ;
 
 const config: SocketIoConfig = { url: 'http://localhost:3000', options: {} };
 
@@ -58,12 +58,12 @@ const config: SocketIoConfig = { url: 'http://localhost:3000', options: {} };
     CursosComponent,
     NuevoCursoComponent,
     DetallesCursoComponent,
-    ChatComponent,
-    ChatroomComponent,
     CursarComponent,
     ConocenosComponent,
     MensajesComponent,
-    BandejaComponent
+    BandejaComponent,
+    TemasCursosComponent,
+    ReporteCursosComponent
   ],
   entryComponents: [],
   imports: [

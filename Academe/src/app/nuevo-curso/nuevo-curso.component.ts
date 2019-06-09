@@ -125,6 +125,7 @@ export class NuevoCursoComponent implements OnInit {
       task.snapshotChanges().pipe(
         finalize(() => this.imagenDefault = this.downloadURL)
       ).subscribe();
+      console.log(this.downloadURL);
     }
 
 }

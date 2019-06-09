@@ -45,6 +45,23 @@ export class FirebaseService {
     });
   }
 
+  createContenido(item, contenido) {
+    return this.db.collection('temas').add({
+      curso: item.curso,
+      tema: item.tema,
+      titulo: item.titulo,
+      contenido: contenido
+    });
+  }
+  deleteContenido(contenidoKey) {
+    return this.db.collection('temas').doc(contenidoKey).delete();
+
+  }
+  getContenidoPorCurso(curso) {
+    return this.db.collection('temas', ref => ref.where('curso', '==', curso)
+    ).snapshotChanges();
+  }
+
   subscribirCurso(usuario, curso2) {
     return this.db.collection('subscripciones').add({
       alumno: usuario,

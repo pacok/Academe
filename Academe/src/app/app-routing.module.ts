@@ -16,6 +16,8 @@ import { CursarComponent } from './cursar/cursar.component' ;
 import { ConocenosComponent } from './conocenos/conocenos.component';
 import { MensajesComponent } from './mensajes/mensajes.component';
 import { BandejaComponent } from './bandeja/bandeja.component' ;
+import { TemasCursosComponent } from './temas-cursos/temas-cursos.component' ;
+import { ReporteCursosComponent } from './reporte-cursos/reporte-cursos.component' ;
 
 
 const routes: Routes = [
@@ -60,6 +62,12 @@ const routes: Routes = [
     },
     {
         path: 'bandeja', component: BandejaComponent
+    },
+    {
+        path: 'temas/:id', component: TemasCursosComponent, resolve: {data : EditarCursoResolver}
+    },
+    {
+        path: 'reporteCursos', component: ReporteCursosComponent
     }
 ];
 

@@ -20,6 +20,8 @@ export class HomeComponent implements OnInit {
   subscripciones = false;
   subscriptoresArray = [];
   subscriptoresArrayFinal = [];
+  private roles: string[];
+  private authority: string;
 
   constructor(
     public firebaseService: FirebaseService,
@@ -39,6 +41,15 @@ export class HomeComponent implements OnInit {
     };
     this.sacarUsuarios();
     this.listarPorUsuario(this.token.getUsername());
+    this.roles = this.token.getAuthorities();
+    this.roles.every(role => {
+      if (role === 'ROL_ADMINISTRADOR') {
+        this.authority = 'admin';
+        return false;
+      }
+      this.authority = 'user';
+      return true;
+    });
   }
   accion() {
     this.ocultar = !this.ocultar;
@@ -75,6 +86,9 @@ export class HomeComponent implements OnInit {
 
   IrABandeja() {
     this.router.navigate(['/bandeja/']);
+  }
+  IrARepote() {
+    this.router.navigate(['/reporteCursos/']);
   }
 
   eliminarSubscripcion(item) {

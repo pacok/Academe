@@ -27,13 +27,16 @@
         <div class="col col-md-2 image-col">
           <img class="image" [src]="item.payload.doc.data().imagen">
         </div>
-        <div class="col col-md-8 text-col">
+        <div class="col col-md-4 text-col">
           <h2 class="mb-1">{{item.payload.doc.data().nombre}} </h2>
           <h5 > Autor: {{item.payload.doc.data().autor}} </h5>
         </div>
-        <div class="col col-md-2 actions-col" *ngIf="authority == 'admin'">
+        <div class="col col-md-6 actions-col" *ngIf="authority == 'admin'">
           <button class="btn btn-primary" (click)="editarCurso(item)" type="button">
             Modificar
+          </button>
+          <button class="btn btn-primary" style="margin-left: 10px" (click)="temasCurso(item)" type="button">
+            Añadir Material
           </button>
         </div>
         <div class="col col-md-2 actions-col" *ngIf="authority == 'user'">
