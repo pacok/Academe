@@ -23,10 +23,8 @@ import { FlashMessagesModule, FlashMessagesService } from 'angular2-flash-messag
 
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {MatButtonModule, MatInputModule, MatSliderModule, MatDialogModule } from '@angular/material';
-import { WebsocketService } from './services/websocket.service';
+
 import { SocketIoModule, SocketIoConfig } from 'ngx-socket-io';
-import { AuthGuard } from './services/Auth.guard';
-import { UserChatService } from './services/userChat.service';
 
 import { httpInterceptorProviders } from './auth/auth-interceptor';
 
@@ -42,7 +40,8 @@ import { ConocenosComponent } from './conocenos/conocenos.component';
 import { MensajesComponent } from './mensajes/mensajes.component';
 import { BandejaComponent } from './bandeja/bandeja.component';
 import { TemasCursosComponent } from './temas-cursos/temas-cursos.component';
-import { ReporteCursosComponent } from './reporte-cursos/reporte-cursos.component' ;
+import { ReporteCursosComponent } from './reporte-cursos/reporte-cursos.component';
+import { ReporteSubscripcionComponent } from './reporte-subscripcion/reporte-subscripcion.component' ;
 
 const config: SocketIoConfig = { url: 'http://localhost:3000', options: {} };
 
@@ -63,7 +62,8 @@ const config: SocketIoConfig = { url: 'http://localhost:3000', options: {} };
     MensajesComponent,
     BandejaComponent,
     TemasCursosComponent,
-    ReporteCursosComponent
+    ReporteCursosComponent,
+    ReporteSubscripcionComponent
   ],
   entryComponents: [],
   imports: [
@@ -88,10 +88,7 @@ const config: SocketIoConfig = { url: 'http://localhost:3000', options: {} };
   providers: [httpInterceptorProviders,
      EditarCursoResolver,
      FirebaseService,
-     FlashMessagesService,
-     UserChatService,
-     AuthGuard,
-     WebsocketService
+     FlashMessagesService
     ],
   bootstrap: [AppComponent],
   schemas: [

@@ -18,7 +18,7 @@ import { MensajesComponent } from './mensajes/mensajes.component';
 import { BandejaComponent } from './bandeja/bandeja.component' ;
 import { TemasCursosComponent } from './temas-cursos/temas-cursos.component' ;
 import { ReporteCursosComponent } from './reporte-cursos/reporte-cursos.component' ;
-
+import { ReporteSubscripcionComponent } from './reporte-subscripcion/reporte-subscripcion.component' ;
 
 const routes: Routes = [
     {
@@ -68,6 +68,9 @@ const routes: Routes = [
     },
     {
         path: 'reporteCursos', component: ReporteCursosComponent
+    },
+    {
+        path: 'reporteSubscripcion', component: ReporteSubscripcionComponent
     }
 ];
 

@@ -73,8 +73,6 @@ export class TemasCursosComponent implements OnInit {
   }
 
   save(model) {
-    console.log(model.tema);
-
     if (this.comprobacion(model.tema) === true && this.material !== null) {
       swal.fire({
         title: 'Tema añadido',
@@ -86,9 +84,7 @@ export class TemasCursosComponent implements OnInit {
         confirmButtonText: 'Ok'
       }).then((result) => {
         if (result.value) {
-          console.log('El tema no está');
           this.crearTema(model);
-          console.log(this.item3);
           this.firebaseService.createContenido(this.item3, this.downloadURL);
         }
       });
@@ -103,7 +99,6 @@ export class TemasCursosComponent implements OnInit {
         confirmButtonText: 'Ok'
       }).then((result) => {
         if (result.value) {
-          console.log('El tema está');
         }
       });
     }
@@ -138,7 +133,6 @@ export class TemasCursosComponent implements OnInit {
 
   upload(event) {
     // Get input file
-    console.log('asqui');
     const file = event.target.files[0];
 
     // Generate a random ID
@@ -153,7 +147,6 @@ export class TemasCursosComponent implements OnInit {
 
     // tslint:disable-next-line:max-line-length
     this.downloadURL = 'https://firebasestorage.googleapis.com/v0/b/academe-f159e.appspot.com/o/contenido%2F' + randomId + '?alt=media&token=dac0b284-4dd9-496f-b172-abc183ace7fd';
-    console.log(this.downloadURL);
     // Observe percentage changes
     this.uploadProgress = task.percentageChanges();
     // Get notified when the download URL is available

@@ -23,7 +23,7 @@
         <a class="nav-link active" routerLink="user"><strong>Cursos</strong></a>
       </li>
       <li *ngIf="authority === 'admin'" class="nav-item" routerLinkActive="active">
-        <a class="nav-link active" routerLink="admin"><strong>Administracion</strong></a>
+        <a class="nav-link active" routerLink="admin"><strong>Administración de cursos</strong></a>
       </li>
       <li *ngIf="!authority" class="nav-item" routerLinkActive="active">
         <a class="nav-link active" routerLink="auth/login"><strong>Entrar</strong></a>
@@ -31,9 +31,6 @@
       <li class="nav-item" routerLinkActive="active">
         <a class="nav-link active" routerLink="conocenos" href="#"><strong>Conocenos</strong></a>
       </li>
-      <!----<li *ngIf="authority === 'user'" class="nav-item">
-          Bienvenido: <br/> {{nombre}}
-        </li>-->
     </ul>
   </div>  
 </nav>
@@ -53,7 +50,7 @@
                       </ul>
                   </div>
                   <div class="col-sm-4 myCols">
-                      <h5>Sobre Nuestra academias</h5>
+                      <h5>Sobre Nuestra Academia</h5>
                       <ul>
                           <li routerLinkActive="active"><a routerLink="conocenos">Contactanos</a></li>
                           <li routerLinkActive="active"><a routerLink="conocenos">Quienes somos</a></li>

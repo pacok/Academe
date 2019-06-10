@@ -83,7 +83,6 @@ export class MensajesComponent implements OnInit {
          this.subscriptoresArray.push(item.payload.doc.data().alumno);
       });
       this.subscriptoresArrayFinal = this.eliminarDuplicados(this.subscriptoresArray);
-      console.log(this.subscriptoresArrayFinal);
     });
   }
 

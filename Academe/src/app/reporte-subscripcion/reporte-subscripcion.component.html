@@ -1,0 +1,32 @@
+<div #content>
+
+  <table class="table" id="contentToConvert" *ngIf="ocultar">
+    <thead class="thead-dark">
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col">Alumno</th>
+        <th scope="col">Subscripciones</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let items of Subscripciones; let i= index;">
+        <th scope="row">{{i+1}}</th>
+        <td>{{items.nombre}}</td>
+        <td>
+      <tr *ngFor="let item of items.cursos; let i= index;">
+        <th scope="row">{{i+1}}</th>
+        <td>{{item.payload.doc.data().curso}}</td>
+      </tr>
+      </td>
+      </tr>
+    </tbody>    
+  </table>
+  <div>
+    <button *ngIf="!ocultar"class="btn btn-primary mr-auto" (click)="verTabla()">
+      Generar Informe
+    </button>
+    <button *ngIf="ocultar" class="btn btn-primary mr-auto" (click)="generarPDF()">
+      Generar PDF
+    </button>
+  </div>
+</div>

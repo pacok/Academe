@@ -79,31 +79,6 @@ export class LoginComponent implements OnInit {
         });
       }
     );
-
-    /**  Registro para el chat
-      const user = {
-        username: this.form.username,
-      };
-      this.userServiceChat.login(user).subscribe(response => {
-        console.log(user);
-        const res = response.json();
-        if (res.isPresent === true) {
-            localStorage.setItem('user', JSON.stringify(res.user));
-            this.fmService.show('Successfully logged in', {
-              cssClass: 'alert-success',
-              timeout: 3000
-            });
-            this.router.navigate(['/']);
-        } else {
-          this.fmService.show('User not found', {
-            cssClass: 'alert-danger',
-            timeout: 3000
-          });
-        }
-      });*/
-
-
-
   }
 
   registro() {

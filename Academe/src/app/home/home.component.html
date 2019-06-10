@@ -21,7 +21,7 @@
     </div>
   </div>
 
-  <div class="card">
+  <div class="card" *ngIf="authority === 'user'">
     <div class="card-header">
       <div class="container">
         <div class="row">
@@ -109,59 +109,67 @@
       </div>
     </div>
     <div class="card-body">
-
       <div class="list-group-item list-group-item-action flex-column align-items-start">
         <div class="row">
           <div class="col col-md-8 text-col">
             <h2>Cursos disponibles en la academia</h2>
           </div>
           <div class="col col-md-4 actions-col">
-            <button class="btn btn-primary mr-auto" (click)="IrARepote()">Generar pdf</button>
+            <button class="btn btn-primary mr-auto" (click)="IrARepote()">Ver detalle</button>
           </div>
         </div>
       </div>
-      <li class="list-group-item">Dapibus ac facilisis in</li>
-      <li class="list-group-item">Vestibulum at eros</li>
-
-
-    </div>
-
-  </div>
-
-
-  <ng-template #loggedOut>
-
-    <div class="row">
-      <div class="col-md-12 text-center">
-        <h2 style="color:midnightblue"><strong>Pulse Entrar para comenzar</strong></h2>
+      <div class="list-group-item list-group-item-action flex-column align-items-start">
+        <div class="row">
+          <div class="col col-md-8 text-col">
+            <h2>Alumnos y subscripciones</h2>
+          </div>
+          <div class="col col-md-4 actions-col">
+            <button class="btn btn-primary mr-auto" (click)="IrARepoteSubscripcion()">Ver detalle</button>
+          </div>
+        </div>
       </div>
     </div>
 
-    <div class="container">
-      <ngb-carousel *ngIf="images">
-        <ng-template ngbSlide>
-          <img [src]="images[0]" alt="Random first slide">
-          <div class="carousel-caption" style="color:black">
-            <h2><b>La hora del Aprendizaje</b></h2>
-            <h4>La mejor forma de preparate para el mañana.</h4>
-          </div>
-        </ng-template>
-        <ng-template ngbSlide>
-          <img [src]="images[1]" alt="Random second slide">
-          <div class="carousel-caption" style="color:black">
-            <h3><b>Los mejores Cursos</b> </h3>
-            <p>Pleno acceso a los mejores materiales.</p>
-          </div>
-        </ng-template>
-        <ng-template ngbSlide>
-          <img [src]="images[2]" alt="Random third slide">
-          <div class="carousel-caption" style="color:black">
-            <h3><b>Garantía de éxito</b></h3>
-            <p>Calendario por temas y ejercicios de autoevaluación.</p>
-          </div>
-        </ng-template>
-      </ngb-carousel>
+
+  </div>
+
+</div>
+
+
+<ng-template #loggedOut>
+
+  <div class="row">
+    <div class="col-md-12 text-center">
+      <h2 style="color:midnightblue"><strong>Pulse Entrar para comenzar</strong></h2>
     </div>
+  </div>
+
+  <div class="container">
+    <ngb-carousel *ngIf="images">
+      <ng-template ngbSlide>
+        <img [src]="images[0]" alt="Random first slide">
+        <div class="carousel-caption" style="color:black">
+          <h2><b>La hora del Aprendizaje</b></h2>
+          <h4>La mejor forma de preparate para el mañana.</h4>
+        </div>
+      </ng-template>
+      <ng-template ngbSlide>
+        <img [src]="images[1]" alt="Random second slide">
+        <div class="carousel-caption" style="color:black">
+          <h3><b>Los mejores Cursos</b> </h3>
+          <p>Pleno acceso a los mejores materiales.</p>
+        </div>
+      </ng-template>
+      <ng-template ngbSlide>
+        <img [src]="images[2]" alt="Random third slide">
+        <div class="carousel-caption" style="color:black">
+          <h3><b>Garantía de éxito</b></h3>
+          <p>Calendario por temas y ejercicios de autoevaluación.</p>
+        </div>
+      </ng-template>
+    </ngb-carousel>
+  </div>
 
 
-  </ng-template>
+</ng-template>

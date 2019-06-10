@@ -21,7 +21,6 @@ export class EditarCursoComponent implements OnInit {
   uploadProgress: Observable<number>;
   uploadURL: Observable<string>;
   downloadURL: string;
-  public collapses: string[] = ['collapse46'];
 
   validation_messages = {
    'nombre': [
@@ -54,10 +53,6 @@ export class EditarCursoComponent implements OnInit {
       }
     });
   }
-  agregarCollapse () {
-    console.log('collapse');
-    this.collapses.push('collapse46');
-}
 
   createForm() {
     this.exampleForm = this.fb.group({

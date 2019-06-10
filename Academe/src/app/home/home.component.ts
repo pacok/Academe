@@ -90,6 +90,9 @@ export class HomeComponent implements OnInit {
   IrARepote() {
     this.router.navigate(['/reporteCursos/']);
   }
+  IrARepoteSubscripcion() {
+    this.router.navigate(['/reporteSubscripcion/']);
+  }
 
   eliminarSubscripcion(item) {
     swal.fire({
