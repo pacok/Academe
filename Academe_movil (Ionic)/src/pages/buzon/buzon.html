@@ -1,0 +1,25 @@
+<ion-header>
+  <ion-navbar color="primary">
+    <ion-title>Buzón de Entrada</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content class="masters" padding>
+  <ion-card *ngFor="let item of items">
+    <h3 *ngIf="mensajes">No tienes ningun mensaje.</h3>
+    <ion-card-title text-center color="primary">Mensaje de: {{item.payload.doc.data().de}}</ion-card-title>
+
+    <ion-card-content>
+      <h5>Asunto: {{item.payload.doc.data().asunto}}</h5>
+      <h5>Mensaje:</h5>
+      <ion-card>
+        <h5> {{item.payload.doc.data().mensaje}}</h5>
+      </ion-card>
+
+      <button ion-button float-right color="danger" (click)="eliminarMensaje(item)"> Eliminar
+        Mensaje</button>
+
+    </ion-card-content>
+  </ion-card>
+
+</ion-content>

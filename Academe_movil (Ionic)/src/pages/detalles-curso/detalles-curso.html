@@ -1,0 +1,28 @@
+<ion-header>
+  <ion-navbar color="primary">
+    <ion-title>detallesCurso</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content class="masters" padding>
+  <ion-card>
+    <ion-card-header>
+      <img class="card-img-top" [src]="item.imagen" alt="Card image cap">
+      <ion-card-title>{{item.nombre}}</ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+      <ion-item>Autor: {{item.autor}}</ion-item>
+      {{item.descripcion}}
+      <ion-item>
+        <button ion-button full color="primary" (click)="suscribirse()">Suscribirse</button>
+      </ion-item>
+    </ion-card-content>
+    <ion-row class="cardfooter">
+      <ion-col align-self: center>
+        <p>Academe 2019 &copy;</p>
+      </ion-col>
+    </ion-row>
+
+  </ion-card>
+
+</ion-content>

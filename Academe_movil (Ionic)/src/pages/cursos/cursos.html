@@ -1,0 +1,32 @@
+<ion-header>
+  <ion-navbar color="primary">
+    <ion-title>Cursos Ofertados</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content class="masters" padding>
+
+  <div class="input-group">
+    <input type="text" class="form-control" [(ngModel)]="searchValue" [ngModelOptions]="{standalone: true}" placeholder="Buscar por nombre..." (keyup)="searchByName()">
+  </div>
+    
+
+    <ion-card *ngFor="let item of items">
+        
+        <ion-card-header>  
+          <img [src]="item.payload.doc.data().imagen" >       
+          <ion-card-title>{{item.payload.doc.data().nombre}}</ion-card-title>
+        </ion-card-header>
+      
+        <ion-card-content>
+          <ion-item>
+              Autor: {{item.payload.doc.data().autor}}
+          </ion-item>
+          <ion-item>
+            <button ion-button full color="primary" (click)="viewDetails(item.payload.doc.data())">Ver Detalles</button>
+            </ion-item>
+        </ion-card-content>
+      </ion-card>
+
+    
+</ion-content>

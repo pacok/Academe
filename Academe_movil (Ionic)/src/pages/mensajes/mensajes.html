@@ -1,0 +1,70 @@
+<ion-header>
+  <ion-navbar color="primary">
+    <ion-title>Enviar Mensajes</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+  <form class="form" [formGroup]="validations_form" (ngSubmit)="onSubmit(validations_form.value)">
+
+    <ion-item>
+      <ion-label floating color="primary">De:</ion-label>
+      <ion-input type="text" value="{{usuarioAcutal}}" formControlName="de"></ion-input>
+    </ion-item>
+    <div class="validation-errors">
+      <ng-container *ngFor="let validation of validation_messages.de">
+        <div class="error-message"
+          *ngIf="validations_form.get('de').hasError(validation.type) && (validations_form.get('de').dirty || validations_form.get('nombre').touched)">
+          {{ validation.message }}
+        </div>
+      </ng-container>
+    </div>
+
+    <ion-item>
+      <ion-label>Para</ion-label>
+      <ion-select formControlName="para" class="form-controll" [(ngModel)]="gaming" multiple="true"
+        cancelText="Cancelar" okText="Seleccionar">
+        <ion-option *ngFor="let subscriptores of subscriptoresArrayFinal" value="{{subscriptores}}">{{subscriptores}}
+        </ion-option>
+      </ion-select>
+    </ion-item>
+    <div class="validation-errors">
+      <ng-container *ngFor="let validation of validation_messages.para">
+        <div class="error-message"
+          *ngIf="validations_form.get('para').hasError(validation.type) && (validations_form.get('para').dirty || validations_form.get('para').touched)">
+          {{ validation.message }}
+        </div>
+      </ng-container>
+    </div>
+    <ion-item>
+      <ion-label floating color="primary">Asunto</ion-label>
+      <ion-input type="text" formControlName="asunto" class="form-controll" required></ion-input>
+    </ion-item>
+    <div class="validation-errors">
+      <ng-container *ngFor="let validation of validation_messages.asunto">
+        <div class="error-message"
+          *ngIf="validations_form.get('asunto').hasError(validation.type) && (validations_form.get('asunto').dirty || validations_form.get('asunto').touched)">
+          {{ validation.message }}
+        </div>
+      </ng-container>
+    </div>
+    <ion-item>
+      <ion-textarea formControlName="mensaje" class="form-controll" required placeholder="Escriba el mensahe aquí...">
+      </ion-textarea>
+    </ion-item>
+    <div class="validation-errors">
+      <ng-container *ngFor="let validation of validation_messages.mensaje">
+        <div class="error-message"
+          *ngIf="validations_form.get('mensaje').hasError(validation.type) && (validations_form.get('mensaje').dirty || validations_form.get('mensaje').touched)">
+          {{ validation.message }}
+        </div>
+      </ng-container>
+    </div>
+
+    <button class="submit-btn" ion-button block type="submit" [disabled]="!validations_form.valid">Enviar
+      mensaje</button>
+    <label class="error-message">{{errorMessage}}</label>
+
+  </form>
+
+</ion-content>

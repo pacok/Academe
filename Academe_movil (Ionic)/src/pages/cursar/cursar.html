@@ -1,0 +1,36 @@
+<ion-header>
+  <ion-navbar color="primary">
+    <ion-title>Curso {{item.nombre}}</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content class="masters" padding>
+  <ion-card>
+    <ion-card-header>
+      <img class="card-img-top" [src]="item.imagen" alt="Card image cap">
+    </ion-card-header>
+    <ion-card-content>
+      <ion-item>Autor: {{item.autor}}</ion-item>
+      {{item.descripcion}}
+      <ion-item>
+        <button ion-button color="danger" (click)="eliminarSubscripcion()">Eliminar Subscripción</button>
+      </ion-item>
+    </ion-card-content>
+
+  </ion-card>
+
+  <div>
+    <h3 *ngIf="tema">No se ha subido contenido para este curso.</h3>
+    <h4 *ngIf="!tema">Contenido del curso:</h4>
+    <div class="list-mini">
+      <ion-list>
+        <ion-item *ngFor="let item2 of items4">
+          <p> Tema: {{item2.payload.doc.data().tema}}</p>
+          <h2>Titulo: {{item2.payload.doc.data().titulo}}</h2>
+          <a href="{{item2.payload.doc.data().contenido}}" class="btn btn-primary mr-2">Descargar Contenido</a>
+        </ion-item>
+      </ion-list>
+    </div>
+  </div>
+
+</ion-content>
