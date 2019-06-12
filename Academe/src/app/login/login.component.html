@@ -1,11 +1,13 @@
 <div *ngIf="isLoggedIn; else loggedOut">
   <div class="container">
     <h2>Bienvenid@ {{usuario}}</h2>
-    <h5>Aqui comienza tu camino hacia el concimiento. Subscribete a cuantos cursos necesites,
+    <h5>Aquí comienza tu camino hacia el concimiento. Subscribete a cuantos cursos necesites,
       estamos encantados de que nos hayas elegido como tu plataforma para el aprendizaje.
     </h5>
-    <h5>Utiliza el menu superior para encontrar los cursos que desees y comienza tu aprendizaje.</h5>
-
+    <h5>Utiliza el <strong>MENU</strong> superior para encontrar los cursos que desees y comenzar tu aprendizaje.</h5>
+    <div style="text-align: center; margin-top: 5em;">
+      <img src="../../assets/img/bienvenida.png">
+    </div>
   </div>
 </div>
 
@@ -13,20 +15,22 @@
 
 
 
-<div class="wrapper fadeInDown">
-  <div id="formContent">
-    <div class="fadeIn first">
-      <img src="../../assets/img/logo2.png" id="icon" alt="User Icon" />
-    </div>
+  <div class="wrapper fadeInDown">
+    <div id="formContent">
+      <div class="fadeIn first">
+        <img src="../../assets/img/logo2.png" id="icon" alt="User Icon" />
+      </div>
 
-    <form  name="form" (ngSubmit)="f.form.valid && onSubmit()" #f="ngForm" novalidate>
-      <input type="text" id="login" class="fadeIn third" name="login" placeholder="Usuario" [(ngModel)]="form.username" #username="ngModel">  
-      <input type="password" id="password" class="fadeIn second" name="login" placeholder="Contraseña" [(ngModel)]="form.password" #password="ngModel">
-      <input type="submit" class="fadeIn fourth btn btn-success" value="Log In">
-      <input type="button" class="fadeIn fourth btn btn-success" value="Registrarse" (click)="registro()"> 
-    </form>
-   
+      <form name="form" (ngSubmit)="f.form.valid && onSubmit()" #f="ngForm" novalidate>
+        <input type="text" id="login" class="fadeIn third" name="login" placeholder="Usuario"
+          [(ngModel)]="form.username" #username="ngModel">
+        <input type="password" id="password" class="fadeIn second" name="login" placeholder="Contraseña"
+          [(ngModel)]="form.password" #password="ngModel">
+        <input type="submit" class="fadeIn fourth btn btn-success" value="Log In">
+        <input type="button" class="fadeIn fourth btn btn-success" value="Registrarse" (click)="registro()">
+      </form>
+
+    </div>
   </div>
-</div>
 
 </ng-template>
