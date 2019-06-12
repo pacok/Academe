@@ -2,15 +2,15 @@
 
 
 # Academe
-Proyecto ciclo formativo DAM, plataforma de aprendizaje.
+Proyecto ciclo formativo DAM ----> Plataforma de aprendizaje.
 
 ## Para iniciarlo
 
-El proyecto consta de dos partes, la carpeta correspondiente al backend ha sido realizada utilizando Spring security con el uso del IDE eclipse-spring tools. Mientras la parte del frontend esta escrito usando Angular 6.
+El proyecto consta de tres partes, la carpeta correspondiente al backend ha sido realizada utilizando Spring security con el uso del IDE eclipse-spring tools. La parte del frontend ha sido desarrollada usando Angular 6 mientras que el desarrollo de la aplicación móvil ha sido usando Ionic, en ambos casos se ha utilizado el editor Visual Studio Code.
 
 ### Requisitos
 
-Mysql, npm, Angular 6.
+Java 8, Spring, Mysql, npm, Angular 6, Ionic 3.
 
 ### Instalacion
 
@@ -25,9 +25,28 @@ Para el frontend desde la carpeta raiz ejecutar en la terminal:
 * npm install
 
 Una vez instaladas las dependencias ejecutar:
+
 * ng serve
 
-Se lanzara en el puerto 4200 del localhost
+Se lanzará en el puerto 4200 del localhost
+
+Para la parte movil en la carpeta Academe_movil(Ionic) ejecutar desde una terminal:
+
+* npm install
+
+Una vez instaladas las dependencias ejecutar:
+
+* Ionic serve
+
+Se lanzará en el puerto 8100 del localhost
+
+También se podrá hacer uso de la herramienta lab de ionic (emulación de dispositivos en el navegador)
+
+* Ionic serve --lab
+
+(si no obtenemos resultado debemos renombrar el archivo app.xxxxxxx.js que se encuentra enla ubucación:
+
+/Academe_movil (Ionic)/node_modules/@ionic/lab/www/build/app por el nombre que nos indica la consola del navegador.
 
 ## Probar la aplicacion
 
@@ -39,11 +58,13 @@ Abrir el navegador y dirigete a la direccion http:/localhost/4200.
 * [Angular](https://angular.io/) - Framework para el desarrollo del frontend
 * [Firebase](https://firebase.google.com/) - Base de datos en la nube de google
 * [Eclipse-Spring](https://spring.io/tools) - IDE para el desarrollo del backend
+* [Ionic](https://ionicframework.com/) - framework para el desarrollo de la aplicación para dispositivos móviles
+* [Visual Studio Code](https://code.visualstudio.com/) - Editor de texto usado en el desarrollo
 
 ## Autor
 
 * **Francisco Camas** - *Github* - [pacok](https://github.com/pacok)
 
 ## Licencia
-Este proyecto carece de licencias, sientete libre de descargarlo y utilizar el codigo a tu antojo. :)
+Este proyecto carece de licencias, sientete libre de descargarlo y utilizar el código a tu antojo. :)
 
