@@ -30,7 +30,7 @@ Una vez instaladas las dependencias ejecutar:
 
 Se lanzará en el puerto 4200 del localhost
 
-Para la parte movil en la carpeta Academe_movil(Ionic) ejecutar desde una terminal:
+Para la parte móvil en la carpeta Academe_movil(Ionic) ejecutar desde una terminal:
 
 * npm install
 
@@ -50,9 +50,9 @@ También se podrá hacer uso de la herramienta lab de ionic (emulación de dispo
 
 ## Probar la aplicacion
 
-Frontend: Abrir el navegador y dirigete a la direccion http:/localhost/4200.
+Frontend: Abrir el navegador y dirígete a la dirección http:/localhost/4200.
 
-Aplicación Móvil: Abrir el navegador y dirigete a la direccion http:/localhost/8100 o para --lab http:/localhost/8200.
+Aplicación Móvil: Abrir el navegador y dirígete a la dirección http:/localhost/8100 o para --lab http:/localhost/8200.
 
 ## Tecnologias
 
