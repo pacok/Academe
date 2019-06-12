@@ -50,8 +50,9 @@ También se podrá hacer uso de la herramienta lab de ionic (emulación de dispo
 
 ## Probar la aplicacion
 
-Abrir el navegador y dirigete a la direccion http:/localhost/4200.
+Frontend: Abrir el navegador y dirigete a la direccion http:/localhost/4200.
 
+Frontend: Abrir el navegador y dirigete a la direccion http:/localhost/8100 o para --lab http:/localhost/8200.
 
 ## Tecnologias
 
